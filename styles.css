@@ -1,0 +1,46 @@
+/* Global reset so width and height include padding and border */
+*,
+::before ::after {
+  box-sizing: border-box;
+}
+/* Override browser defaults of body (margin, padding, font family, 
+bkgrd color and color), lists, links, images, headings, paragraph and 
+form elements (button, input, textarea) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: whitesmoke;
+  color: coral;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid coral;
+  padding: 0.5rem;
+}
