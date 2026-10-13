@@ -1,5 +1,9 @@
 # odin-recipes
 
+13 October 2026, 3.42pm
+Reached the Block and Inline Assignment where instruction was to style Odin Recipes.
+Added Lenis for the scrolling effect. Added a global header bar.
+
 28 Sep 2026, 10.48pm
 Should I let #odin-recipes stay at the start of this document? I didn't put it there. Who? Why?
 
