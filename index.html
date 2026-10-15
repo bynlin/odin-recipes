@@ -5,11 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Odin Recipes</title>
-  <link rel="preload" href="styles.css" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- 1. The Lenis CDN script -->
-  <script src="https://unpkg.com" defer></script>
-  <script type="module" src="../script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css" />
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
 
 </head>
 
@@ -19,7 +25,7 @@
     <h1><a href="index.html">Odin Recipes</a></h1>
     <nav>
       <ul class="main-nav">
-        <li><a href=" index.html" aria-current="page" class="active">Home</a></li>
+        <li><a href="index.html" aria-current="page" class="active">Home</a></li>
         <li><a href="recipes/lasagna.html">Lasagna</a></li>
         <li><a href="recipes/potato-salad.html">Potato Salad</a></li>
         <li><a href="recipes/sausage-casserole.html">Sausage Casserole</a></li>
@@ -27,14 +33,80 @@
     </nav>
   </header>
 
-  <a href="recipes/lasagna.html" class="recipe-card">
-    <div class="recipe-image">
-      <img src="/recipes/assets/lasagna-unsplash.jpg" alt="crusty baked lasagna with a piece cut out surrounded by basil leaves 
+  <main>
+    <!-- Image and cards now share the same parent (<main>).
+      This is what lets the sticky image stay stuck for as long as the cards are on the page. -->
+    <img src="recipes/assets/kitchen.jpg" alt="A cozy rustic kitchen with warm wood and well-used cooking utensils"
+      class="bkgrd-img">
+
+    <section class="recipe-cards">
+
+      <a href="recipes/lasagna.html" class="recipe-card">
+        <div class="recipe-image">
+          <img src="recipes/assets/lasagna-unsplash.jpg" alt="crusty baked lasagna with a piece cut out surrounded by basil leaves 
       and cherry tomatoes">
-    </div>
-    <h2>Lasagna</h2>
-    <p>Craving the ultimate comfort? Bake this bubbling, ultra-cheesy lasagna tonight!</p>
-  </a>
+        </div>
+        <h2>Classic Lasagna</h2>
+        <p>Craving the ultimate comfort? Bake this bubbling, ultra-cheesy lasagna tonight!</p>
+      </a>
+
+      <a href="recipes/potato-salad.html" class="recipe-card">
+        <div class="recipe-image">
+          <img src="recipes/assets/potato-salad-unsplash.jpg"
+            alt="potato salad loaded with diced avocados and tomatoes mixed with feta cheese and topped with ricotta cheese">
+        </div>
+        <h2>Rustic Potato Salad</h2>
+        <p>Dreaming of a cool, creamy classic? Toss this rich, tangy potato salad today!</p>
+      </a>
+
+      <a href="recipes/sausage-casserole.html" class="recipe-card">
+        <div class="recipe-image">
+          <img src="recipes/assets/sausage-casserole-unsplash.jpg" alt="sausage casserole">
+        </div>
+        <h2>Old-fashioned Sausage Casserole</h2>
+        <p>Yearning for a warm, comforting classic? Simmer this rich, savory sausage casserole tonight!</p>
+      </a>
+
+      <a href="#bak-kut-teh" id="bak-kut-teh" class="recipe-card full-recipe">
+        <div class="recipe-image">
+          <img src="recipes/assets/bak-kut-teh.jpg" alt="A bowl of clear Asian soup with pork pieces, 
+            white shimeji mushrooms, and ginger on a wooden table.">
+        </div>
+        <h2>Bak Kut Teh</h2>
+        <ol>
+          <li>Rub salt all over bakut then rinse the salt off</li>`
+          <li>Put ribs into a pot of water. Bring to a boil.
+            Let boil for 2 to 3 minutes. Drain and 'wash' ribs.</li>
+          <li>Put a lot of washed, unpeeled garlic cloves together
+            ith soup packet in pot of water, bring these to a
+            boil</li>
+          <li>Add around a teaspoonful of dark soy sauce</li>
+          <li>Add clean ribs into boiling soup</li>
+          <li>Turn fire down to medium low for 30 mins to 45mins to 1 hour</li>
+        </ol>
+      </a>
+
+      <a href="recipes/potato-salad.html" class="recipe-card">
+        <div class="recipe-image">
+          <img src="recipes/assets/potato-salad-unsplash.jpg"
+            alt="potato salad loaded with diced avocados and tomatoes mixed with feta cheese and topped with ricotta cheese">
+        </div>
+        <h2>Rustic Potato Salad</h2>
+        <p>Dreaming of a cool, creamy classic? Toss this rich, tangy potato salad today!</p>
+      </a>
+
+      <a href="recipes/sausage-casserole.html" class="recipe-card">
+        <div class="recipe-image">
+          <img src="recipes/assets/sausage-casserole-unsplash.jpg" alt="sausage casserole">
+        </div>
+        <h2>Old-fashioned Sausage Casserole</h2>
+        <p>Yearning for a warm, comforting classic? Simmer this rich, savory sausage casserole tonight!</p>
+      </a>
+
+
+    </section>
+
+  </main>
 
 </body>
 
