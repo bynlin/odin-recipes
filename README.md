@@ -2,8 +2,9 @@
 
 13 October 2026, 9.40pm
 
-1. Avoid styling HTML elements by universally by accident. Styling semantic tags like <a> <p> <h1> means styles apply to all.
-   matching instances in site. Use class selectors or more specific selectors instead (e.g.) .main-nav a {...} .main-nav a:hover {...}
+1. Avoid styling HTML elements by universally by accident. Styling semantic tags like a p h1
+   means styles apply to all. matching instances in site. Use class selectors or more specific selectors
+   instead (e.g.) .main-nav a {...} .main-nav a:hover {...}
 2. Put transition on the base elemeent (not hover states)
 3. Adding a border of 2px to main-nav's hover state made the nav flicker (because on hover, 4px is added horizontally,
    on mouse-leave, 4px is less) To solve this, use outline
