@@ -2,6 +2,7 @@
   /* Text */
   --color-heading: #6c4630bd;
   --color-body-text: #756f6c;
+  --color-body-light: rgb(199, 185, 178);
   --color-brand: cornflowerblue;
   --color-accent: coral;
   --color-accent-hover: rgb(255, 107, 53);
@@ -19,6 +20,8 @@
 
   /* Shape and spacing */
   --radius: 1rem;
+  --radius-text: 0.375em;
+  --padding-text: 0.1em 0.25em;
   --gap: 1rem;
 
   /* Layout */
@@ -100,7 +103,6 @@ header h1 a {
 
 .main-nav {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   font-weight: bold;
   text-align: center;
@@ -273,6 +275,12 @@ nav.recipe-nav ul {
 .full-recipe:focus-within {
   outline: 2px solid var(--color-brand);
   outline-offset: 2px;
+}
+.boxed {
+  display: inline-block;
+  border: 2px solid var(--color-body-light);
+  border-radius: var(--radius-text);
+  padding: var(--padding-text);
 }
 
 /* Mobile: the image becomes exactly one screen tall.
