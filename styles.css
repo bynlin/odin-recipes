@@ -263,14 +263,17 @@ nav.recipe-nav ul {
   position: relative; /* Make entire card clickable 1: This traps the overlay inside the card */
 }
 .full-recipe h2 a::after {
-  content: ""; /* generates a blank visual element out of thin air right after the link text*/
-  position: absolute; /*removes this blank element from the normal text flow so it can be stretched.*/
-  inset: 0; /*  Make entire card clickable 2: makes the invisible overlay fill the card, 
+  /* generates a blank visual element out of thin air right after the link text*/
+  content: "";
+  /*removes this blank element from the normal text flow so it can be stretched.*/
+  position: absolute;
+  /*  Make entire card clickable 2: makes the invisible overlay fill the card, 
   because the card (.full-recipe) is position: relative 
   Lenis sees a normal #link click, so script.js doesn’t change, 
   and your scroll-margin-top still applies. Keyboard users can 
   also Tab to the link, which they couldn’t with a plain 
   clickable <article>*/
+  inset: 0;
 }
 .full-recipe:focus-within {
   outline: 2px solid var(--color-brand);
