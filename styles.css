@@ -320,3 +320,74 @@ nav.recipe-nav ul {
     transition: none !important;
   }
 }
+
+/* Flexbox Lessons */
+.flex-container-1 {
+  border: 4px solid blue;
+  padding: 1rem;
+  /* Makes this a flex container and makes its children flex items*/
+  display: flex;
+}
+.flex-container-1 div {
+  background: var(--color-header-bg);
+  border: 4px solid var(--color-heading);
+  height: 100px;
+  /* 1. Make divs (items) grow and shrink equally */
+  /* 2. flex:1; is the same as below */
+  /* 3. flex: flex-grow flex-shrink flex-basis */
+  flex: 1 1 0%;
+}
+/* Makes div two 2x the size of others */
+.flex-container .two {
+  flex: 3 1 0%;
+}
+
+.searchbar {
+  display: flex;
+  border: 4px solid coral;
+  padding: 0.5rem;
+}
+.searchbar input {
+  background-color: rgb(187, 241, 243);
+  border: 4px solid cornflowerblue;
+  flex: 1;
+}
+
+form {
+  border: 4px solid cornflowerblue;
+  padding: 1rem;
+  background-color: aliceblue;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1em;
+}
+
+input {
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 4px;
+}
+
+.name {
+  flex-grow: 1;
+  flex-basis: 170px;
+}
+
+.email {
+  flex-grow: 3;
+  flex-basis: 170px;
+}
+
+button {
+  height: 2.5rem;
+  flex-grow: 1;
+  flex-basis: 70px;
+  color: coral;
+  font-weight: 500;
+}
+label {
+  font-weight: 500;
+  border: 2px;
+}
