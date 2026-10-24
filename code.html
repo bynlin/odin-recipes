@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Practicing code found online">
+  <title>Code | Odin Recipes</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css" />
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <h1><a href="index.html">Odin Recipes</a></h1>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="index.html">Food</a></li>
+        <li><a href="recipes/code-practice.html" aria-current="page">Code</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Image and cards sharing the same parent (<main>), is what lets the sticky image stay 
+      stuck for as long as the cards are on the page. -->
+    <img src="recipes/assets/bg-code.jpg" alt="" class="bg-img" width="2000" height="1243">
+
+    <section class="cards">
+
+      <a href="recipes/adaptive-photo-layout-with-flexbox.html" class="card">
+        <p class="overline">Code</p>
+        <h2>Flexbox</h2>
+        <p>Adaptive photo layout with flexbox</p>
+        <a href:"" class="">Revise</a>
+      </a>
+
+      <article id="note-1" class="card is-focused">
+        <p class="overline">Notes</p>
+        <div class="recipe-image">
+        </div>
+        <h2><a href="#note-1">18 Oct 2026</a></h2>
+        <ol>
+          <li>Use <span class="boxed">rem</span> for spacing and font-sizes</li>
+          <li>Use <span class="boxed">em</span> for component intervals</li>
+          <li>Use <span class="boxed">px</span> for borders and shadows</li>
+          <li>Spacing between items: Use <span class="boxed">gap</span> with flexbox or grid</li>
+          <li>Layout: Use <span class="boxed">flexbox</span> for one direction or use <span class="boxed">grid</span>for
+            two</li>
+          <li>Selectors: Classes, plus <span class="boxed">+</span> or <span class="boxed">:not ()</span> for when
+            you need to skip the first or last item, for example: <span class="boxed">.prose li + li
+              {margin-top:0.25em}</span> or <span class="boxed">.prose li:not(:first-chiled) {margin-top:
+              0.25em}</span>
+          </li>
+        </ol>
+      </article>
+
+      <article id="note-2" class="card is-focused">
+        <p class="overline">Notes</p>
+        <h2><a href="#note-2">How to use clamps</a></h2>
+        <ol>
+          <li>Fluid type</li>
+          <li>clamps ()</li>
+          <li>Utopia.fyi</li>
+        </ol>
+      </article>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

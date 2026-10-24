@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Terrible agah-agah recipes from ma.">
-  <title>Odin Recipes</title>
+  <meta name="description" content="Terrible aga-aga recipes from ma.">
+  <title>Food | Odin Recipes</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,10 +23,8 @@
     <h1><a href="index.html">Odin Recipes</a></h1>
     <nav>
       <ul class="main-nav">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="recipes/lasagna.html">Lasagna</a></li>
-        <li><a href="recipes/potato-salad.html">Potato Salad</a></li>
-        <li><a href="recipes/sausage-casserole.html">Sausage Casserole</a></li>
+        <li><a href="index.html" aria-current="page">Food</a></li>
+        <li><a href="code.html">Code</a></li>
       </ul>
     </nav>
   </header>
@@ -34,11 +32,11 @@
   <main>
     <!-- Image and cards sharing the same parent (<main>), is what lets the sticky image stay 
       stuck for as long as the cards are on the page. -->
-    <img src="recipes/assets/kitchen.jpg" alt="" class="bg-img" width="2000" height="2466">
+    <img src="recipes/assets/bg-food.jpg" alt="" class="bg-img" width="2000" height="2466">
 
-    <section class="recipe-cards">
+    <section class="cards">
 
-      <a href="recipes/lasagna.html" class="recipe-card">
+      <a href="recipes/lasagna.html" class="card">
         <p class="overline">West</p>
         <div class="recipe-image">
           <img src="recipes/assets/lasagna.jpg"
@@ -49,7 +47,7 @@
         <p>Craving the ultimate comfort? Bake this bubbling, ultra-cheesy lasagna tonight!</p>
       </a>
 
-      <a href="recipes/potato-salad.html" class="recipe-card">
+      <a href="recipes/potato-salad.html" class="card">
         <p class="overline">West</p>
         <div class="recipe-image">
           <img src="recipes/assets/potato-salad.jpg"
@@ -60,20 +58,8 @@
         <p>Dreaming of a cool, creamy classic? Toss this rich, tangy potato salad today!</p>
       </a>
 
-      <a href="recipes/sausage-casserole.html" class="recipe-card">
-        <p class="overline">West</p>
-        <div class="recipe-image">
-          <img src="recipes/assets/sausage-casserole.jpg"
-            alt="Baked sausage casserole topped with crispy breadcrumbs and fresh basil leaves next to cherry tomatoes."
-            width="800" height="800" loading="lazy">
-        </div>
-
-        <h2>Sausage Casserole</h2>
-        <p>Yearning for a warm, comforting classic? Simmer this rich, savory sausage casserole tonight!</p>
-      </a>
-
-      <article id="bak-kut-teh" class="recipe-card full-recipe">
-        <p class="overline">Agah Agah</p>
+      <article id="bak-kut-teh" class="card is-focused">
+        <p class="overline">Aga-Aga</p>
         <div class="recipe-image">
           <img src="recipes/assets/bak-kut-teh.jpg"
             alt="A bowl of clear Asian soup with pork pieces, white shimeji mushrooms, and ginger on a wooden table."
@@ -93,8 +79,8 @@
         </ol>
       </article>
 
-      <article id="chicken-rice" class="recipe-card full-recipe">
-        <p class="overline">Agah Agah</p>
+      <article id="chicken-rice" class="card is-focused">
+        <p class="overline">Aga-Aga</p>
         <div class="recipe-image">
           <img src="recipes/assets/chicken-rice.jpg"
             alt="Hainanese chicken rice served with sliced cucumber and dipping sauce." width="1000" height="667"
@@ -114,45 +100,6 @@
             sesame oil</li>
           <li>Taste and season soup to use it to cook rice.</li>
           <li>Add cabbage, fishballs into soup and cook it, then done.</li>
-        </ol>
-      </article>
-
-      <article id="note1" class="recipe-card full-recipe">
-        <p class="overline">Notes</p>
-        <div class="recipe-image">
-          <!-- <img src="recipes/assets/chicken-rice.jpg"
-            alt="Hainanese chicken rice served with sliced cucumber and dipping sauce." width="1000" height="667"
-            loading="lazy"> -->
-        </div>
-        <h2><a href="#note1">18 Oct 2026</a></h2>
-        <ol>
-          <li>Use <span class="boxed">rem</span> for spacing and font-sizes</li>
-          <li>Use <span class="boxed">em</span> for component intervals</li>
-          <li>Use <span class="boxed">px</span> for borders and shadows</li>
-          <li>Spacing between items: Use <span class="boxed">gap</span> with flexbox or grid</li>
-          <li>Layout: Use <span class="boxed">flexbox</span> for one direction or use <span class="boxed">grid</span>
-            for
-            two
-          </li>
-          <li>Selectors: Classes, plus <span class="boxed">+</span> or <span class="boxed">:not ()</span> for when
-            you need to skip the first or last item, for example: <span class="boxed">.prose li + li
-              {margin-top:0.25em}</span> or <span class="boxed">.prose li:not(:first-chiled) {margin-top:
-              0.25em}</span>
-          </li>
-        </ol>
-      </article>
-
-      <article id="note2" class="recipe-card full-recipe">
-        <p class="overline">Notes</p>
-        <div class="recipe-image">
-          <!-- <img src="recipes/assets/chicken-rice.jpg"
-            alt="Hainanese chicken rice served with sliced cucumber and dipping sauce." width="1000" height="667"
-            loading="lazy"> -->
-        </div>
-        <h2><a href="#note2">How to use clamps</a></h2>
-        <ol>
-          <li>clamps ()</li>
-          <li>Utopia.fyi</li>
         </ol>
       </article>
 
