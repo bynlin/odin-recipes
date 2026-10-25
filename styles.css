@@ -1,3 +1,6 @@
+/* ==========================================
+   1. GLOBAL STYLES - Variables
+   ========================================== */
 :root {
   /* Text */
   --color-heading: #87573bbd;
@@ -32,7 +35,9 @@
   --hero-h: 120svh;
 }
 
-/* Reset Browser Defaults */
+/* ==========================================
+   2. GLOBAL STYLES - Resets
+   ========================================== */
 *,
 *::before,
 *::after {
@@ -83,6 +88,9 @@ textarea {
   padding: 0.5rem;
 }
 
+/* ==========================================
+   3. GLOBAL STYLES - Header with Main Nav
+   ========================================== */
 header {
   text-align: center;
   padding: 0.25rem 0.75rem 0.75rem 0.75rem;
@@ -98,7 +106,6 @@ header h1 a {
   color: var(--color-brand);
   font-weight: normal;
 }
-
 .main-nav {
   display: flex;
   justify-content: center;
@@ -119,6 +126,9 @@ header h1 a {
   border-radius: 8px;
 }
 
+/* ==========================================
+   4. Background Image that Scrolls & Sticks
+   ========================================== */
 .bg-img {
   /* Sticky = behaves like normal flow until it reaches the offset set by
      "top" below, then it holds there while its parent (<main>) is in view. */
@@ -153,14 +163,9 @@ header h1 a {
   z-index: 0;
 }
 
-.overline {
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-align: center;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  margin: 0 0 0.25rem;
-}
+/* ==========================================
+   5. Cards
+   ========================================== */
 .cards {
   /* z-index only works on positioned elements, so give it a position.
      "relative" changes nothing visually, it just enables z-index. */
@@ -176,6 +181,10 @@ header h1 a {
   /* Make cards scroll up before the bg img locks in place */
   margin-top: -40vh;
 }
+
+/* ==========================================
+   6. Card Styles
+   ========================================== */
 .card {
   color: var(--color-body-text);
   display: flex;
@@ -187,9 +196,18 @@ header h1 a {
   background-color: var(--color-card-bg);
   padding: 2.5rem;
   gap: 1rem;
+  opacity: 99%;
   transition:
     box-shadow 0.2s ease-in,
     background-color 0.2s ease-in;
+}
+.overline {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  margin: 0 0 0.25rem;
 }
 .card h2 {
   text-align: center;
@@ -197,6 +215,19 @@ header h1 a {
   font-weight: 800;
   line-height: 1.2;
   color: var(--color-heading);
+}
+.text-muted {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+hr {
+  width: 100%; /* Ensures it stretches horizontally */
+  height: 1px; /* Sets the thickness of the line */
+  border: none; /* Removes default browser borders */
+  background-color: var(--color-body-text); /* Sets the line color */
+  opacity: 50%;
+  /* margin: 16px 0; Adds spacing above and below */
 }
 /* This applies margin-bottom: 0.5rem; to all <li> and not the last <li> */
 .card ol li:not(:last-child) {
@@ -207,6 +238,7 @@ header h1 a {
 }
 .card:hover {
   background-color: var(--color-highlight-bg);
+  opacity: 100%;
   box-shadow: 2px 2px 10px 2px rgba(255, 127, 80, 0.15);
 }
 .recipe-image {
@@ -223,39 +255,9 @@ header h1 a {
   transform: scale(1.1);
 }
 
-.recipe-pg-bg {
-  /* Fixed = removes the image from the normal page flow and pins it to the
-     viewport (the browser window), so it stays put while the page scrolls. */
-  position: fixed;
-  /* Shorthand for top: 0; right: 0; bottom: 0; left: 0.
-     Pins all four edges of the image to the four edges of the viewport. */
-  inset: 0;
-  /* Make the image as wide as the viewport. Images normally use their own
-     natural size, so this has to be set explicitly. */
-  width: 100%;
-  /* Make the image as tall as the viewport. */
-  height: 100%;
-  /* Fill the box without squashing the photo. The photo keeps its shape and
-     the overflow gets cropped, like background-size: cover. */
-  object-fit: cover;
-  /* Negative z-index puts the image below the normal page content */
-  z-index: -1;
-}
-
-.recipe-nav {
-  position: sticky;
-  top: var(--header-h);
-  padding: 16px;
-  z-index: 10;
-  background-color: var(--color-brand);
-  color: var(--color-card-bg);
-}
-nav.recipe-nav ul {
-  font-weight: 600;
-  gap: 0.5rem;
-  display: flex;
-}
-
+/* ==========================================
+   7. Card is-focused
+   ========================================== */
 .is-focused {
   /* where the card's top edge must land when scrolled to */
   scroll-margin-top: calc(var(--header-h) + 2rem);
@@ -278,7 +280,6 @@ nav.recipe-nav ul {
   outline: 2px solid var(--color-brand);
   outline-offset: 2px;
 }
-
 .boxed {
   display: inline-block;
   border: 2px solid var(--color-body-light);
@@ -286,7 +287,73 @@ nav.recipe-nav ul {
   padding: var(--padding-text);
 }
 
-/* Mobile: the image becomes exactly one screen tall.
+/* ==========================================
+   8. Solo Recipe Page
+   ========================================== */
+.recipe-pg-bg {
+  /* Fixed = removes the image from the normal page flow and pins it to the
+     viewport (the browser window), so it stays put while the page scrolls. */
+  position: fixed;
+  /* Shorthand for top: 0; right: 0; bottom: 0; left: 0.
+     Pins all four edges of the image to the four edges of the viewport. */
+  inset: 0;
+  /* Make the image as wide as the viewport. Images normally use their own
+     natural size, so this has to be set explicitly. */
+  width: 100%;
+  /* Make the image as tall as the viewport. */
+  height: 100%;
+  /* Fill the box without squashing the photo. The photo keeps its shape and
+     the overflow gets cropped, like background-size: cover. */
+  object-fit: cover;
+  /* Negative z-index puts the image below the normal page content */
+  z-index: -1;
+}
+.recipe-nav {
+  position: sticky;
+  top: var(--header-h);
+  padding: 16px;
+  z-index: 10;
+  background-color: var(--color-brand);
+  color: var(--color-card-bg);
+}
+nav.recipe-nav ul {
+  font-weight: 600;
+  gap: 0.5rem;
+  display: flex;
+}
+
+/* ==========================================
+   9. Solo Code Page
+   ========================================== */
+.revision-link {
+  display: inline-block;
+  padding: 1em 2em;
+  margin: 1rem;
+  background-color: cornflowerblue;
+  color: aliceblue;
+  border-radius: 999px;
+  transition: background-color 0.2s ease-in;
+}
+.revision-link:hover {
+  background-color: rgb(57, 106, 196);
+}
+.ext-link {
+  background-color: #ffffff;
+  padding: 1em 2em;
+  margin: 1rem;
+  color: cornflowerblue;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.ext-link:hover {
+  background-color: aliceblue;
+  color: cornflowerblue;
+}
+
+/* ========================================================================
+   10. @media for Background Image that Scrolls & Sticks
+   ======================================================================== */
+/* On mobile, the image becomes exactly one screen tall.
    top = 100svh - 100svh = 0, so it pins to the viewport as a backdrop
    and the cards scroll over it. Same code, just one variable changed. */
 @media (max-width: 768px) {
@@ -309,7 +376,6 @@ nav.recipe-nav ul {
     padding: 2rem;
   }
 }
-
 @media (max-width: 424px) {
   :root {
     --header-h: 144px; /* 424px and below */
@@ -321,7 +387,9 @@ nav.recipe-nav ul {
   }
 }
 
-/* Flexbox Lessons */
+/* ========================================================================
+   11. Flexbox Lessons
+   ======================================================================== */
 .flex-container-1 {
   border: 4px solid blue;
   padding: 1rem;
@@ -341,7 +409,6 @@ nav.recipe-nav ul {
 .flex-container .two {
   flex: 3 1 0%;
 }
-
 .searchbar {
   display: flex;
   border: 4px solid coral;
@@ -352,7 +419,6 @@ nav.recipe-nav ul {
   border: 4px solid cornflowerblue;
   flex: 1;
 }
-
 form {
   border: 4px solid cornflowerblue;
   padding: 1rem;
@@ -362,14 +428,12 @@ form {
   align-items: flex-end;
   gap: 1em;
 }
-
 input {
   display: block;
   width: 100%;
   height: 2.5rem;
   margin-top: 4px;
 }
-
 .name {
   flex-grow: 1;
   flex-basis: 170px;
@@ -390,23 +454,22 @@ label {
   border: 2px;
 }
 
-.revision-link {
-  display: inline-block;
-  border: 4px solid rgb(57, 106, 196);
-  padding: 1em 2em;
-  margin: 1rem 0;
-  background-color: cornflowerblue;
-  color: aliceblue;
-  border-radius: 999px;
-  transition: background-color 0.2s ease-in;
+/* ========================================================================
+   12. Flexbox Lessons - Adaptive Photo Layout with Flexbox
+   ======================================================================== */
+ul.adaptive-photo-layout-with-flexbox {
+  display: flex;
+  flex-wrap: wrap;
 }
-.revision-link:hover {
-  background-color: rgb(57, 106, 196);
+.adaptive-photo-layout-with-flexbox li {
+  height: 30vh;
+  flex-grow: 1;
 }
-.practice-link {
-  background-color: #ffffff;
-  padding: 1em 2em;
-  color: cornflowerblue;
-  border-radius: 999px;
-  font-weight: 500;
+.adaptive-photo-layout-with-flexbox li img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
 }
+/*Advanced*/
+/*Portrait*/
