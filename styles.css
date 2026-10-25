@@ -2,24 +2,35 @@
    1. GLOBAL STYLES - Variables
    ========================================== */
 :root {
-  /* Text */
-  --color-heading: #87573bbd;
-  --color-body-text: #a98572;
-  --color-body-light: rgb(199, 185, 178);
-  --color-brand: cornflowerblue;
-  --color-accent: coral;
-  --color-accent-hover: rgb(255, 107, 53);
-
-  /* Backgrounds */
-  --color-page-bg: rgb(236, 233, 221);
-  --color-card-bg: #f9f1e2;
-  --color-header-bg: blanchedalmond;
-  --color-highlight-bg: #ffffff;
+  --color-primary: cornflowerblue;
+  --color-primary-dark: rgb(85, 128, 209);
+  --color-primary-light: aliceblue;
+  --color-secondary: coral;
+  --color-secondary-dark: rgb(255, 107, 53);
+  --color-secondary-light: blanchedalmond;
+  --color-secondary-lghter: #f9f1e2;
+  --color-tertiary: #a98572;
+  --color-tertiary-light: rgb(199, 185, 178);
+  --color-greys-light: rgb(236, 233, 221);
+  --color-greys-lightest: #ffffff;
 
   /* Unused */
   /* --color-bg-4: #5f6d3b;
   --color-bg-5: #c6dcff;
   --color-text-6: #e9f9b2; */
+
+  /* Text */
+  --color-heading: var(--color-tertiary);
+  --color-body-text: var(--color-tertiary);
+  --color-body-light: var(--color-tertiary-light);
+
+  /* Backgrounds */
+  --color-page-bg: var(--color-greys-light);
+  --color-card-bg: var(--color-secondary-lghter);
+  --color-header-bg: var(--color-secondary-light);
+  --color-highlight-bg: var(--color-greys-lightest);
+
+  /* Buttons */
 
   /* Shape and spacing */
   --radius: 1rem;
@@ -48,7 +59,7 @@ body {
   padding: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: var(--color-page-bg);
-  color: var(--color-accent);
+  color: var(--color-secondary);
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -84,7 +95,7 @@ input,
 textarea {
   font-family: inherit;
   font-size: inherit;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-secondary);
   padding: 0.5rem;
 }
 
@@ -103,7 +114,7 @@ header {
 header h1 a {
   font-family: "Gasoek One", Georgia, "Times New Roman", Times, serif;
   font-size: 3.8rem;
-  color: var(--color-brand);
+  color: var(--color-primary);
   font-weight: normal;
 }
 .main-nav {
@@ -234,7 +245,7 @@ hr {
   margin-bottom: 0.5rem;
 }
 .card:hover h2 {
-  color: var(--color-accent-hover);
+  color: var(--color-secondary-dark);
 }
 .card:hover {
   background-color: var(--color-highlight-bg);
@@ -277,7 +288,7 @@ hr {
   inset: 0;
 }
 .is-focused:focus-within {
-  outline: 2px solid var(--color-brand);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 .boxed {
@@ -313,7 +324,7 @@ hr {
   top: var(--header-h);
   padding: 16px;
   z-index: 10;
-  background-color: var(--color-brand);
+  background-color: var(--color-primary);
   color: var(--color-card-bg);
 }
 nav.recipe-nav ul {
@@ -325,29 +336,27 @@ nav.recipe-nav ul {
 /* ==========================================
    9. Solo Code Page
    ========================================== */
-.revision-link {
+.link {
+  font-weight: 500;
   display: inline-block;
   padding: 1em 2em;
-  margin: 1rem;
-  background-color: cornflowerblue;
-  color: aliceblue;
   border-radius: 999px;
   transition: background-color 0.2s ease-in;
 }
-.revision-link:hover {
-  background-color: rgb(57, 106, 196);
+.link.blue {
+  background-color: var(--color-primary);
+  color: var(--color-primary-light);
 }
-.ext-link {
-  background-color: #ffffff;
-  padding: 1em 2em;
-  margin: 1rem;
-  color: cornflowerblue;
-  border-radius: 999px;
-  font-weight: 500;
+.link.blue:hover {
+  background-color: var(--color-primary-dark);
 }
-.ext-link:hover {
-  background-color: aliceblue;
-  color: cornflowerblue;
+.link.light {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+.link.light:hover {
+  background-color: var(--color-greys-lightest);
+  color: var(--color-primary);
 }
 
 /* ========================================================================
@@ -457,19 +466,76 @@ label {
 /* ========================================================================
    12. Flexbox Lessons - Adaptive Photo Layout with Flexbox
    ======================================================================== */
-ul.adaptive-photo-layout-with-flexbox {
+.adaptive-photo-layout-with-flexbox {
   display: flex;
   flex-wrap: wrap;
 }
+/* Set the size of each photo's slot */
 .adaptive-photo-layout-with-flexbox li {
-  height: 30vh;
+  /* a. Give every <li> the same height */
+  height: 30svh;
+  /* b. Let each <li> grow to share the row's leftover width */
   flex-grow: 1;
 }
-.adaptive-photo-layout-with-flexbox li img {
+.adaptive-photo-layout-with-flexbox img {
+  /* Stop the image from growing taller than its parent <li>.
+     max-height: 100% means "at most 100% of the <li>'s height. 
+     This only works because the <li> has an explicit height (30svh); 
+     without one, the percentage has nothing to refer to. */
   max-height: 100%;
+
+  /* min-width: 100%; makes the <img> at least as wide as <li>. The <li>
+  grows because of flex-grow:1; but <img> doesn't grow on its own. Without
+  this line, each photo would stay at their natural width and leave uneven gaps
+  inside its slot. */
   min-width: 100%;
+
+  /* object-fit controls how the picture inside an <img> or <video> is resized 
+  to fit its own box (not the <li> box). 'cover' preserves the aspect ratio, 
+  scales it to fill the <img>'s own box and clips any overflow - basically 
+  preventing the photos from getting distorted when the <img> is forced to 
+  match its slot <li>. */
   object-fit: cover;
+
+  /* <img> is an inline element by default, so it sits on the text baseline
+  and leaves a gap beneath it (for letters like g, y, q, p) vertical-align: bottom;
+  lines the <img> up with the bottom of the <li> instead, removing that gap.  */
   vertical-align: bottom;
 }
-/*Advanced*/
-/*Portrait*/
+/* === Viewport Optimization === */
+/* === Portrait === */
+/* When viewport is taller than it is wide, this approach limits the amount of
+photos per line thus messing up their aspect ratios. To solve this, we can make
+the viewport less tall */
+@media (max-aspect-ratio: 1/1) {
+  .adaptive-photo-layout-with-flexbox li {
+    height: 20svh;
+  }
+}
+/* === Short Screens === */
+/* To help with small devices in landscape, increasing the height of photos
+helps see them as large as possible */
+@media (max-height: 480px) {
+  .adaptive-photo-layout-with-flexbox li {
+    height: 80svh;
+  }
+}
+/* === Smaller Screens + Portrait === */
+/* Most phones aren't wide enough to allow flexbox to properly do its job
+without miniaturizing the photos, so here he opted to not try to fit multiple
+photos per line. Still it's worth setting a maximum height here so you'll at 
+least have a hint at the next photo in the list. */
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .adaptive-photo-layout-with-flexbox {
+    flex-direction: row;
+  }
+  .adaptive-photo-layout-with-flexbox li {
+    height: auto;
+    width: 100%;
+  }
+  .adaptive-photo-layout-with-flexbox img {
+    width: 100%;
+    max-height: 75svh;
+    min-width: 0;
+  }
+}
