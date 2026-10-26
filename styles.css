@@ -10,7 +10,7 @@
   --color-secondary-light: blanchedalmond;
   --color-secondary-lghter: #f9f1e2;
   --color-tertiary: #a98572;
-  --color-tertiary-light: rgb(199, 185, 178);
+  --color-tertiary-light: rgb(183, 170, 164);
   --color-greys-light: rgb(236, 233, 221);
   --color-greys-lightest: #ffffff;
 
@@ -38,6 +38,9 @@
   --padding-text: 0.1em 0.25em;
   --gap: 1.5rem;
 
+  /* Font Size */
+  --fluid-14-16: clamp(0.875rem, 0.8239rem + 0.2273vw, 1rem);
+
   /* Layout */
   --header-h: 158px;
   /* Hero image height: one place to control it. Both the image height
@@ -60,7 +63,7 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: var(--color-page-bg);
   color: var(--color-secondary);
-  font-size: 1rem;
+  font-size: var(--fluid-14-16);
   line-height: 1.5;
 }
 h1,
@@ -124,12 +127,12 @@ header h1 a {
   text-align: center;
 }
 .main-nav li {
-  font-size: 1rem;
-  margin: 16px 2px;
+  font-size: var(--fluid-14-16);
+  margin: 1em 0.125em;
 }
 .main-nav a {
   transition: background-color 0.2s ease-in;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
 }
 .main-nav a:hover,
 .main-nav a[aria-current="page"] {
@@ -336,6 +339,25 @@ nav.recipe-nav ul {
 /* ==========================================
    9. Solo Code Page
    ========================================== */
+.lesson {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem;
+  gap: 1rem;
+  align-items: center;
+}
+.bibliography {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.description {
+  color: var(--color-tertiary-light);
+  font-size: var(--fluid-14-16);
+  font-weight: 500;
+  text-align: center;
+}
 .link {
   font-weight: 500;
   display: inline-block;
@@ -358,6 +380,13 @@ nav.recipe-nav ul {
   background-color: var(--color-greys-lightest);
   color: var(--color-primary);
 }
+.link.blue,
+.link.light {
+  flex: 1;
+  text-align: center;
+  /* Prevents the button from becoming multiple lines */
+  white-space: nowrap;
+}
 
 /* ========================================================================
    10. @media for Background Image that Scrolls & Sticks
@@ -374,10 +403,7 @@ nav.recipe-nav ul {
   .site-title {
     font-size: 2.6rem;
   }
-  .main-nav li {
-    font-size: 0.85rem;
-    margin: 8px 0px;
-  }
+
   .main-nav {
     flex-wrap: wrap;
   }
