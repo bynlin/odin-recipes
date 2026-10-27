@@ -9,6 +9,7 @@
   --color-secondary-dark: rgb(255, 107, 53);
   --color-secondary-light: blanchedalmond;
   --color-secondary-lghter: #f9f1e2;
+  --color-secondary-lghtest: #f8f2ea;
   --color-tertiary: #a98572;
   --color-tertiary-light: rgb(183, 170, 164);
   --color-greys-light: rgb(236, 233, 221);
@@ -191,7 +192,7 @@ button {
   columns: 4 260px;
   column-gap: var(--gap);
   /* Make cards scroll up before the bg img locks in place */
-  margin-top: -40vh;
+  margin-top: -58vh;
 }
 
 /* ==========================================
@@ -241,6 +242,12 @@ hr {
   opacity: 50%;
   /* margin: 16px 0; Adds spacing above and below */
 }
+.boxed {
+  display: inline-block;
+  border: 1px dashed var(--color-body-text);
+  border-radius: var(--radius-text);
+  padding: var(--padding-text);
+}
 /* This applies margin-bottom: 0.5rem; to all <li> and not the last <li> */
 .card ol li:not(:last-child) {
   margin-bottom: 0.5rem;
@@ -274,6 +281,7 @@ hr {
    7. Card is-focused
    ========================================== */
 .is-focused {
+  background-color: var(--color-secondary-lghtest);
   /* where the card's top edge must land when scrolled to */
   scroll-margin-top: calc(var(--header-h) + 2rem);
   position: relative; /* Make entire card clickable 1: This traps the overlay inside the card */
@@ -294,12 +302,6 @@ hr {
 .is-focused:focus-within {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
-}
-.boxed {
-  display: inline-block;
-  border: 2px solid var(--color-body-light);
-  border-radius: var(--radius-text);
-  padding: var(--padding-text);
 }
 
 /* ==========================================
@@ -340,7 +342,7 @@ nav.recipe-nav ul {
 /* ==========================================
    9. Solo Code Page
    ========================================== */
-.lesson {
+.intro {
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
@@ -351,6 +353,14 @@ nav.recipe-nav ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+.title {
+  font-weight: 700;
+  color: var(--color-tertiary-light);
+  text-align: center;
+}
+.study .title {
+  text-align: left;
 }
 .description {
   color: var(--color-tertiary-light);
@@ -428,7 +438,8 @@ nav.recipe-nav ul {
 .lessons {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
+  margin-bottom: 10rem;
 }
 .lessons .description {
   text-align: left;
@@ -510,7 +521,6 @@ form.subscribe {
 }
 label {
   font-weight: 500;
-  border: 2px;
 }
 
 /* ========================================================================
