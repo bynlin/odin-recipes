@@ -36,6 +36,42 @@
 
     <section class="cards">
 
+      <article id="note-3" class="card is-focused">
+        <p class="overline">Notes</p>
+        <h2><a href="#note-3">min-width: 100svh;</a></h2>
+        <ol>
+          <li>What happens when we set <span class="boxed">min-width: 100svh;</span> on <span class="boxed">body</span>
+          </li>
+          <li><span class="boxed">min-height</span> sets the min height of an element where
+            no matter what else happens, this <span class="boxed">body</span> cannot shrink smaller than
+            the <span class="boxed">min-height</span> set. We're telling the browser: "Even if <span
+              class="boxed">body</span>
+            is empty or that <span class="boxed">height</span> is set to 50px—this <span class="boxed">body</span> must
+            be at least 100svh tall.""
+          </li>
+          <li>Common use cases:<br>
+            <ol>
+              <li><strong>Sticky footers:</strong> <br> Even on a nearly empty page, your footer gets pushed down to the
+                absolute bottom of the screen
+              </li>
+              <li><strong>Full-screen Hero Sections:</strong> <br> Ideal for landing page landing spots or splash pages
+                that fills the screen completely like a billboard image, and on mobile where the phone screen is too
+                narrow and the text or content gets too long, let the section stretch downward to fit all the words
+                perfectly.
+              </li>
+              <li><strong>Centered Authentication Pages:</strong> <br> Commonly used for Login, sign-up and
+                password-reset screens that typically feature a single, isolated form card centered horizontally and
+                vertically on the screen.<br>Set <span class="boxed">min-height:100svh;</span> paired with display:grid;
+                place-items:center; on the <span class="boxed">body</span> ensures the card is precisely within the true
+                visible window. If the user rotates their phone horizontally and the form overflows, the <span
+                  class="boxed">min-height</span> safely lets the page grow and become scrollable.</li>
+            </ol>
+          </li>
+        </ol>
+        <hr>
+        <p class="text-muted">28 October 2026</p>
+      </article>
+
       <a href="recipes/flexbox-2.html" class="card">
         <p class="overline">Tutorial</p>
         <h2>Flexbox 2</h2>
