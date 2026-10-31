@@ -16,6 +16,7 @@
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
   <script src="script.js" defer></script>
 </head>
+`
 
 <body>
 
@@ -34,13 +35,87 @@
       stuck for as long as the cards are on the page. -->
     <img src="recipes/assets/bg-code.jpg" alt="" class="bg-img" width="2000" height="1243">
 
-    <section class="cards">
+    <section class="cards-code">
+
+      <div class="card">
+        <p class="overline">Tutorial</p>
+        <h2>Landing Page</h2>
+        <p>Create a responsive landing page referencing a provided image.</p>
+
+        <div class="ext-links">
+          <a href="https://bynlin.github.io/odin-landing-page" target="_blank" rel="noopener noreferrer"
+            class="btn light">View</a>
+          <a href="https://github.com/bynlin/odin-landing-page" target="_blank" rel="noopener noreferrer"
+            class="txt-link">Github Repo</a>
+
+        </div>
+        <hr>
+        <p>Part 1:</p>
+        <ol>
+          <li>Study design to identify sections, sub-sections, contents</li>
+          <li>Structure content in html</li>
+          <li>Set up CSS resets</li>
+          <li>Set up base styles on body</li>
+          <li>Set up image defaults</li>
+          <li>Set up Variables (Typography, Shape and Depth, Layout, Motion, Layering, Semantic color roles)</li>
+          <li>Tip for step 1: When studying the design, note which values repeat. If the same gap or radius show up many
+            times,it earns a variable. If something appears once, hardcode it and skip the variable. This keeps .root
+            from getting bloated.</li>
+        </ol>
+        <p>Part 2:</p>
+        <ol>
+          <li>Use 'layout constraints' method to size and position sections
+          </li>
+          <li>Use 2 layout containers: .container {max-width: 64rem; margin-inline: auto; padding-inline: 1rem;}
+            .container-narrow {margin-block: 5rem; padding-block:3rem}</li>
+          <li>It only hit home for me at this point that .container.bubble means the element will take in declarations
+            from both .container and .bubble and if i add declarations to .container.bubble, the element will take them
+            in too</li>
+        </ol>
+        <p>Part 3:</p>
+        <ol>
+          <li>Sort through the wrapping</li>
+          <li>1st wrapper: Full-width background color wrapper</li>
+          <li>2nd wrapper: Centered Layout Container</li>
+          <li>3rd wrapper: Flec Parent Component</li>
+          <li>Individual children wrapper</li>
+        </ol>
+
+        <p>Part 4:</p>
+        <ol>
+          <li>
+            Deciphering how I should add classes & write selectors to target the elements:
+          </li>
+          <li>There are a lot of times I was writing declarations correctly, e.g. applying styles or flex properties,
+            but it wasn't reflecting. So I thought I was writing them wrong. But then I realise I was targeting wrongly
+            instead, like, img nested deeply in .card should be '.card img' but I tried stuff like, .'card.img' or
+            '.book.img', etc</li>
+        </ol>
+        <p>Part 5:</p>
+        <ol>
+          <li>
+            Deciphering how I should write so that the landing page flexes:
+          </li>
+          <li>I have the most difficulty with flexing images</li>
+          <li>-Problem: telling an image to flex so that it does not
+            overspill its container and so that it fill its container as the container flexes accordingly to viewport
+            changes. max-width
+            min-width
+            width
+            height
+            height-auto</li>
+        </ol>
+        <p>Part 6:</p>
+        <ol> Reviewing and refining user experience like making 'go to section' scroll instead of smack</ol>
+        <hr>
+        <p class="text-muted">30 October 2026</p>
+      </div>
 
       <article id="note-3" class="card is-focused">
         <p class="overline">Notes</p>
-        <h2><a href="#note-3">min-width: 100svh;</a></h2>
+        <h2><a href="#note-3">min-height: 100svh;</a></h2>
         <ol>
-          <li>What happens when we set <span class="boxed">min-width: 100svh;</span> on <span class="boxed">body</span>
+          <li>What happens when we set <span class="boxed">min-height: 100svh;</span> on <span class="boxed">body</span>
           </li>
           <li><span class="boxed">min-height</span> sets the min height of an element where
             no matter what else happens, this <span class="boxed">body</span> cannot shrink smaller than

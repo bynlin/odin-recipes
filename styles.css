@@ -10,8 +10,10 @@
   --color-secondary-light: blanchedalmond;
   --color-secondary-lghter: #f9f1e2;
   --color-secondary-lghtest: #f8f2ea;
+  --color-tertiary-dark: #906d5b;
   --color-tertiary: #a98572;
   --color-tertiary-light: rgb(183, 170, 164);
+  --color-tertiary-lighter: rgb(251, 246, 244);
   --color-greys-light: rgb(236, 233, 221);
   --color-greys-lightest: #ffffff;
 
@@ -179,7 +181,7 @@ button {
 /* ==========================================
    5. Cards
    ========================================== */
-.cards {
+.cards-food {
   /* z-index only works on positioned elements, so give it a position.
      "relative" changes nothing visually, it just enables z-index. */
   position: relative;
@@ -192,7 +194,15 @@ button {
   columns: 4 260px;
   column-gap: var(--gap);
   /* Make cards scroll up before the bg img locks in place */
-  margin-top: -58vh;
+  margin-top: -58svh;
+}
+.cards-code {
+  position: relative;
+  z-index: 2;
+  padding: 6rem;
+  columns: 3 260px;
+  column-gap: var(--gap);
+  margin-top: -58svh;
 }
 
 /* ==========================================
@@ -276,7 +286,39 @@ hr {
 .card:focus-within .recipe-image img {
   transform: scale(1.1);
 }
-
+.btn {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1em;
+  text-align: center;
+}
+.btn.light {
+  border: 1px solid var(--color-body-text);
+  color: var(--color-body-text);
+  transition:
+    background-color ease 0.3s,
+    color ease 0.3s;
+  flex: 1;
+}
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--color-tertiary-lighter);
+}
+.txt-link {
+  text-decoration: underline;
+  text-align: center;
+  padding-top: 0.25rem;
+  flex: 1;
+}
+.txt-link:hover,
+.txt-link:focus-visible {
+  color: var(--color-tertiary-dark);
+}
+.ext-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
 /* ==========================================
    7. Card is-focused
    ========================================== */
